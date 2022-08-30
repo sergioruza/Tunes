@@ -22,6 +22,7 @@ class App extends React.Component {
           />
 
           <Route
+            exact
             path="/search"
             render={ (propsRouter) => (
               <Search { ...propsRouter } />
@@ -29,6 +30,7 @@ class App extends React.Component {
           />
 
           <Route
+            exact
             path="/album/:id"
             render={ (propsRouter) => (
               <Album { ...propsRouter } />
@@ -36,6 +38,7 @@ class App extends React.Component {
           />
 
           <Route
+            exact
             path="/favorites"
             render={ (propsRouter) => (
               <Favorites { ...propsRouter } />
@@ -43,6 +46,7 @@ class App extends React.Component {
           />
 
           <Route
+            exact
             path="/profile"
             render={ (propsRouter) => (
               <Profile { ...propsRouter } />
@@ -50,13 +54,14 @@ class App extends React.Component {
           />
 
           <Route
+            exact
             path="/profile/edit"
             render={ (propsRouter) => (
               <ProfileEdit { ...propsRouter } />
             ) }
           />
 
-          <Route path="*" component={ NotFound } />
+          <Route exact path="*" component={ NotFound } />
         </switch>
       </BrowserRouter>
     );
