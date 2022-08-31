@@ -9,7 +9,12 @@ export default class Search extends Component {
     buttonDisable: true,
     loading: false,
     arrayOfTunes: [],
+    success: false,
   };
+
+  componentWillUnmount() {
+    this.setState({ loading: false });
+  }
 
   inputChange = ({ target }) => {
     const { value } = target;
@@ -31,12 +36,15 @@ export default class Search extends Component {
     this.setState({
       loading: true,
       arrayOfTunes: await searchAlbumsAPI(music),
-      music: '',
+    });
+    this.setState({
+      loading: false,
+      success: true,
     });
   };
 
   render() {
-    const { buttonDisable, loading, arrayOfTunes } = this.state;
+    const { buttonDisable, loading, arrayOfTunes, success, music } = this.state;
     console.log(arrayOfTunes);
     return (
       <div data-testid="page-search">
@@ -65,7 +73,9 @@ export default class Search extends Component {
             </>
           )
         }
-
+        {
+          success && <h3>{`Resultado de álbuns de: ${music}`}</h3>
+        }
       </div>
     );
   }
