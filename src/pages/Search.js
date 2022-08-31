@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import uuid from 'reac-uu';
+import CardAlbum from '../components/CardAlbum';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
@@ -35,9 +37,12 @@ export default class Search extends Component {
     const { music } = this.state;
     this.setState({
       loading: true,
-      arrayOfTunes: await searchAlbumsAPI(music),
     });
+
+    const data = await searchAlbumsAPI(music);
+
     this.setState({
+      arrayOfTunes: data,
       loading: false,
       success: true,
     });
@@ -45,7 +50,21 @@ export default class Search extends Component {
 
   render() {
     const { buttonDisable, loading, arrayOfTunes, success, music } = this.state;
-    console.log(arrayOfTunes);
+    const card = arrayOfTunes.map(({ artistName,
+      collectionName,
+      artworkUrl100,
+      artistId,
+      collectionId,
+    }) => (
+      <CardAlbum
+        key={ artistId }
+        artistName={ artistName }
+        collectionName={ collectionName }
+        collectionId={ collectionId }
+        artworkUrl100={ artworkUrl100 }
+      />
+    ));
+
     return (
       <div data-testid="page-search">
         Search
@@ -75,6 +94,10 @@ export default class Search extends Component {
         }
         {
           success && <h3>{`Resultado de álbuns de: ${music}`}</h3>
+        }
+
+        {
+          arrayOfTunes.length === 0 ? <p>Nenhum álbum foi encontrado</p> : card
         }
       </div>
     );
