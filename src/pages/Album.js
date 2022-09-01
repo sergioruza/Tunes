@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
+import uuid from 'react-uuid';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
@@ -36,13 +37,12 @@ export default class Album extends Component {
         <h1 data-testid="artist-name">{info.artistName}</h1>
         <h2 data-testid="album-name">{info.collectionName}</h2>
         {
-          dataAlbum.map(({ previewUrl,
-            trackName,
-          }, index) => (
+          dataAlbum.map((elemento) => (
             <MusicCard
-              previewUrl={ previewUrl }
-              trackName={ trackName }
-              key={ index }
+              elemento={ elemento }
+              previewUrl={ elemento.previewUrl }
+              trackName={ elemento.trackName }
+              key={ uuid() }
             />
           ))
         }
