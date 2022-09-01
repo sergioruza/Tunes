@@ -19,15 +19,16 @@ export default class Album extends Component {
     const { params } = match;
     const { id } = params;
     const data = await getMusics(id);
+    const dataFilter = data.filter((_, index) => index !== 0);
     this.setState({
-      dataAlbum: data,
       info: data[0],
+      dataAlbum: dataFilter,
     });
   };
 
   render() {
     const { dataAlbum, info } = this.state;
-    console.log(info);
+    console.log(dataAlbum);
 
     return (
       <div data-testid="page-album">
