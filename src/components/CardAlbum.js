@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 export default class CardAlbum extends Component {
   render() {
     const { artistName, collectionName, artworkUrl100, collectionId } = this.props;
-    console.log(typeof collectionId);
 
     return (
 

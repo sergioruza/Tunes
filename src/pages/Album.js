@@ -4,7 +4,7 @@ import uuid from 'react-uuid';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
-
+// ====================> Refenciando alguns toques de Arthur Debiase para o resquisito 7
 export default class Album extends Component {
   state = {
     dataAlbum: [],
@@ -29,7 +29,6 @@ export default class Album extends Component {
 
   render() {
     const { dataAlbum, info } = this.state;
-    console.log(dataAlbum);
 
     return (
       <div data-testid="page-album">

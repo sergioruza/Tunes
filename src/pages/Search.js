@@ -33,7 +33,7 @@ export default class Search extends Component {
     }
   };
 
-  onCLick = async () => {
+  onCLick = async () => { // ====================> refenciando ajuda mentoria de projeto para onde o problema era problema de assincronismo no "Carregando..." - támbem rerefenciando alguns toques de Arthur Debiase. Questão 6
     const { music } = this.state;
     this.setState({
       loading: true,
