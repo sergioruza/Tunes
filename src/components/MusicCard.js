@@ -12,7 +12,7 @@ export default class MusicCard extends Component {
   };
 
   componentDidMount() {
-    this.nameUndefined();
+    this.favoriteStorage();
     // const { favorite } = this.state;
     // const { elemento: { trackId } } = this.props;
     // this.setState({
@@ -36,7 +36,7 @@ export default class MusicCard extends Component {
     });
   };
 
-  nameUndefined = async () => {
+  favoriteStorage = async () => {
     const favorite = await getFavoriteSongs();
     const { elemento: { trackId } } = this.props;
     this.setState({
