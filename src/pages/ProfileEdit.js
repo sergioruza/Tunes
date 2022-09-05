@@ -7,7 +7,6 @@ import { getUser, updateUser } from '../services/userAPI';
 export default class ProfileEdit extends Component {
   state = {
     loading: true,
-    disabled: true,
     redirect: false,
   };
 
@@ -34,7 +33,7 @@ export default class ProfileEdit extends Component {
     const { name, value } = target;
     this.setState({
       [name]: value,
-    }, this.verifyInput());
+    });
   };
 
   verifyInput = () => {
@@ -43,15 +42,11 @@ export default class ProfileEdit extends Component {
     const length = (image.length && email.length
       && name.length && description.length) >= caracter;
     const verifyEmail = email.includes('@') && email.includes('.com');
-    if (length && verifyEmail) {
-      this.setState({ disabled: false });
-    } else {
-      this.setState({ disabled: true });
-    }
+    return !(length && verifyEmail);
   };
 
   render() {
-    const { image, email, name, description, loading, disabled, redirect } = this.state;
+    const { image, email, name, description, loading, redirect } = this.state;
     return (
       <div data-testid="page-profile-edit">
         ProfileEdit
@@ -104,7 +99,7 @@ export default class ProfileEdit extends Component {
               </label>
 
               <button
-                disabled={ disabled }
+                disabled={ this.verifyInput() }
                 type="button"
                 data-testid="edit-button-save"
                 onClick={ async () => {

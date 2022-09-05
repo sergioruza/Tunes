@@ -8,15 +8,11 @@ export default class MusicCard extends Component {
   state = {
     check: false,
     loading: false,
-    favorite: [],
+    // favorite: [],
   };
 
   componentDidMount() {
     this.favoriteStorage();
-  }
-
-  componentDidUpdate() {
-    const { favorite } = this.state;
   }
 
   onChange = async () => {
@@ -42,7 +38,7 @@ export default class MusicCard extends Component {
     const favorite = await getFavoriteSongs();
     const { elemento: { trackId } } = this.props;
     this.setState({
-      favorite,
+      // favorite,
       check: favorite.some((elemento) => elemento.trackId === trackId),
     });
   };
