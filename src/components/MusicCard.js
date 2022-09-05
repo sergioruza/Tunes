@@ -13,27 +13,29 @@ export default class MusicCard extends Component {
 
   componentDidMount() {
     this.favoriteStorage();
-    // const { favorite } = this.state;
-    // const { elemento: { trackId } } = this.props;
-    // this.setState({
-    //   check: favorite.some((elemento) => elemento.trackId === trackId),
-    // });
   }
 
   componentDidUpdate() {
     const { favorite } = this.state;
-    console.log(favorite);
   }
 
-  onChange = async ({ target }) => {
+  onChange = async () => {
     this.setState({ loading: true });
     const { elemento } = this.props;
-    await addSong(elemento);
-    console.log(target);
-    this.setState({
-      loading: false,
-      check: true,
-    });
+    const { check } = this.state;
+    if (check) {
+      await removeSong(elemento);
+      this.setState({
+        loading: false,
+        check: false,
+      });
+    } else {
+      await addSong(elemento);
+      this.setState({
+        loading: false,
+        check: true,
+      });
+    }
   };
 
   favoriteStorage = async () => {

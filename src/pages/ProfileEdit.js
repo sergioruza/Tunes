@@ -35,7 +35,6 @@ export default class ProfileEdit extends Component {
     this.setState({
       [name]: value,
     }, this.verifyInput());
-    console.log(target.value);
   };
 
   verifyInput = () => {
@@ -43,7 +42,7 @@ export default class ProfileEdit extends Component {
     const { image, email, name, description } = this.state;
     const length = (image.length && email.length
       && name.length && description.length) >= caracter;
-    const verifyEmail = email.search('@') && email.search('.com');
+    const verifyEmail = email.includes('@') && email.includes('.com');
     if (length && verifyEmail) {
       this.setState({ disabled: false });
     } else {
@@ -110,7 +109,7 @@ export default class ProfileEdit extends Component {
                 data-testid="edit-button-save"
                 onClick={ async () => {
                   this.setState({ loading: true });
-                  await updateUser({ image, email, name, description });
+                  await updateUser({ name, email, image, description });
                   this.setState({ loading: false, redirect: true });
                 } }
               >
