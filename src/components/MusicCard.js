@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropType from 'prop-types';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 // ====================> Referenciando alguns toque de Arthur Debiase para os requisitos 9 e 10
 
@@ -8,7 +8,7 @@ export default class MusicCard extends Component {
   state = {
     check: false,
     loading: false,
-    // favorite: [],
+    favorite: [],
   };
 
   componentDidMount() {
@@ -20,11 +20,16 @@ export default class MusicCard extends Component {
     // });
   }
 
-  onChange = async () => {
+  componentDidUpdate() {
+    const { favorite } = this.state;
+    console.log(favorite);
+  }
+
+  onChange = async ({ target }) => {
     this.setState({ loading: true });
     const { elemento } = this.props;
     await addSong(elemento);
-
+    console.log(target);
     this.setState({
       loading: false,
       check: true,
@@ -35,7 +40,7 @@ export default class MusicCard extends Component {
     const favorite = await getFavoriteSongs();
     const { elemento: { trackId } } = this.props;
     this.setState({
-      // favorite,
+      favorite,
       check: favorite.some((elemento) => elemento.trackId === trackId),
     });
   };
