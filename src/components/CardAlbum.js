@@ -10,18 +10,19 @@ export default class CardAlbum extends Component {
 
       <div>
         { artistName.length === 0 ? <h2>Nenhum álbum foi encontrado</h2> : (
-          <>
-            <img src={ artworkUrl100 } alt={ artistName } />
+          <div className="card">
+            <img className="img" src={ artworkUrl100 } alt={ artistName } />
             <h3>{ collectionName }</h3>
             <p>{ artistName }</p>
             <Link
+              className="albumLink"
               to={ `/album/${collectionId}` }
               data-testid={ `link-to-album-${collectionId}` }
             >
-              Details
+              Músicas
 
             </Link>
-          </>
+          </div>
         ) }
       </div>
     );

@@ -33,7 +33,7 @@ export default class Login extends Component {
   render() {
     const { user, buttonDisabled, loading, redirect } = this.state;
     return (
-      <div data-testid="page-login">
+      <div className="login" data-testid="page-login">
 
         {
           loading ? <Loading /> : (
@@ -41,12 +41,13 @@ export default class Login extends Component {
               <label htmlFor="nameUser">
                 <input
                   onChange={ this.onChange }
-                  id="nameUser"
+                  className="nameUser"
                   data-testid="login-name-input"
                 />
               </label>
               <button
                 disabled={ buttonDisabled }
+                className="btnLogin"
                 type="button"
                 data-testid="login-submit-button"
                 onClick={ async () => {

@@ -24,13 +24,27 @@ export default class Header extends Component {
     return (
       <header data-testid="header-component">
         {
-          loading ? <Loading /> : <h2 data-testid="header-user-name">{ userName }</h2>
+          loading
+            ? <Loading />
+            : (
+              <h2
+                className="user"
+                data-testid="header-user-name"
+              >
+                { userName }
+              </h2>
+            )
         }
-        <Link to="/search" data-testid="link-to-search">Pesquisar</Link>
-        <br />
-        <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
-        <br />
-        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+        <Link className="nav" to="/search" data-testid="link-to-search">Pesquisar</Link>
+        <Link className="nav" to="/profile" data-testid="link-to-profile">Perfil</Link>
+        <Link
+          className="nav"
+          to="/favorites"
+          data-testid="link-to-favorites"
+        >
+          Favoritos
+
+        </Link>
       </header>
     );
   }

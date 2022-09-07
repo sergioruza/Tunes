@@ -1,0 +1,153 @@
+* {
+  background-color: rgb(18, 18, 18);
+  border: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20%;
+  text-align: center;
+  width: 100%;
+}
+
+.nameUser {
+  background-color: rgb(61, 59, 59);
+  border-radius: 15px;
+  color: white;
+  display: block;
+  font-size: xx-large;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  width: 30em;
+}
+
+.btnLogin {
+  background-color: azure;
+  border-radius: 15px;
+  font-size: xx-large;
+  font-weight: 900;
+  margin: 40px auto;
+  padding: 20px 60px;
+}
+
+.btnLogin:hover {
+  background-color: rgb(28, 202, 89);
+  cursor: pointer;
+  transition: 1500ms;
+}
+
+.search {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.music {
+  background-color: white;
+  border-radius: 15px;
+  font-size: large;
+  font-weight: 550;
+  padding: 15px;
+  text-align: center;
+  width: 25em;
+}
+
+.btnSearch {
+  background-color: white;
+  border-radius: 15px;
+  color: black;
+  font-size: x-large;
+  font-weight: 900;
+  margin: 1.5em;
+  padding: 15px 40px;
+}
+
+.btnSearch:hover {
+  background-color: rgb(28, 202, 89);
+  cursor: pointer;
+  transition: 600ms;
+}
+
+.not {
+  color: white;
+  font-size: x-large;
+  margin-left: 2em;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav {
+  border-radius: 8px;
+  color: white;
+  font-size: larger;
+  font-weight: 900;
+  margin-top: 1em;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav:hover {
+  background-color: #282828;
+  transition: 800ms;
+}
+
+.user {
+  color: rgb(28, 202, 89);
+  font-size: 3em;
+  margin-top: 0.5em;
+}
+
+.cardAlbum {
+  align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  color: white;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 7px;
+  text-align: center;
+  width: 20em;
+}
+
+.img {
+  margin: 0 auto;
+  text-align: center;
+  width: 12em;
+}
+
+.result {
+  color: white;
+  font-size: xx-large;
+  margin: 3em;
+}
+
+.albumLink {
+  color: white;
+  text-decoration: none;
+}
+
+.albumLink:hover {
+  background-color: rgb(28, 202, 89);
+}

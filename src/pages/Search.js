@@ -67,37 +67,42 @@ export default class Search extends Component {
 
     return (
       <div data-testid="page-search">
-        Search
         <Header />
-        {
-          loading ? <Loading /> : (
-            <>
-              <label htmlFor="music">
-                <input
-                  onChange={ this.inputChange }
-                  id="music"
-                  data-testid="search-artist-input"
-                />
-              </label>
-              <button
-                type="button"
-                disabled={ buttonDisable }
-                data-testid="search-artist-button"
-                onClick={ this.onCLick }
-              >
-                Pesquisar
+        <div className="search">
+          {
+            loading ? <Loading /> : (
+              <>
+                <label htmlFor="music">
+                  <input
+                    placeholder="Artists or songs"
+                    onChange={ this.inputChange }
+                    className="music"
+                    data-testid="search-artist-input"
+                  />
+                </label>
+                <button
+                  className="btnSearch"
+                  type="button"
+                  disabled={ buttonDisable }
+                  data-testid="search-artist-button"
+                  onClick={ this.onCLick }
+                >
+                  Pesquisar
 
-              </button>
+                </button>
 
-            </>
-          )
-        }
-        {
-          success && <h3>{`Resultado de álbuns de: ${music}`}</h3>
-        }
+              </>
+            )
+          }
+          {
+            success && <h3 className="result">{`Resultado de álbuns de: ${music}`}</h3>
+          }
 
+        </div>
         {
-          arrayOfTunes.length === 0 ? <p>Nenhum álbum foi encontrado</p> : card
+          arrayOfTunes.length === 0
+            ? <p className="not">Nenhum álbum foi encontrado</p>
+            : <div className="cardAlbum">{card}</div>
         }
       </div>
     );
