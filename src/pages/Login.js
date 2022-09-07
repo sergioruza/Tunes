@@ -40,6 +40,7 @@ export default class Login extends Component {
             <div>
               <label htmlFor="nameUser">
                 <input
+                  placeholder="username"
                   onChange={ this.onChange }
                   className="nameUser"
                   data-testid="login-name-input"

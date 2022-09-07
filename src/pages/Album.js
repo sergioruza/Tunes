@@ -31,20 +31,22 @@ export default class Album extends Component {
     const { dataAlbum, info } = this.state;
 
     return (
-      <div data-testid="page-album">
+      <div className="album" data-testid="page-album">
         <Header />
         <h1 data-testid="artist-name">{info.artistName}</h1>
         <h2 data-testid="album-name">{info.collectionName}</h2>
-        {
-          dataAlbum.map((elemento) => (
-            <MusicCard
-              elemento={ elemento }
-              previewUrl={ elemento.previewUrl }
-              trackName={ elemento.trackName }
-              key={ uuid() }
-            />
-          ))
-        }
+        <div className="cardMusic">
+          {
+            dataAlbum.map((elemento) => (
+              <MusicCard
+                elemento={ elemento }
+                previewUrl={ elemento.previewUrl }
+                trackName={ elemento.trackName }
+                key={ uuid() }
+              />
+            ))
+          }
+        </div>
       </div>
     );
   }

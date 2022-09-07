@@ -126,7 +126,7 @@ header {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  margin: 7px;
+  margin: 20px;
   text-align: center;
   width: 20em;
 }
@@ -144,10 +144,61 @@ header {
 }
 
 .albumLink {
+  border-radius: 70px;
   color: white;
+  font-size: x-large;
   text-decoration: none;
 }
 
 .albumLink:hover {
-  background-color: rgb(28, 202, 89);
+  background-color: rgb(100, 109, 103);
+}
+
+.cardMusic {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6em;
+  text-align: center;
+}
+
+.insideMusic {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 7em;
+  justify-content: center;
+}
+
+.insideMusic h4 {
+  font-size: x-large;
+  font-style: oblique;
+}
+
+.insideMusic audio {
+  width: 80em;
+}
+
+.addFav {
+  font-size: large;
+  margin-left: 1em;
+  margin-top: 1.5em;
+}
+
+.album h1 {
+  color: white;
+  font-style: oblique;
+  margin-top: 3em;
+  text-align: center;
+}
+
+.album h2 {
+  color: white;
+  font-style: oblique;
+  text-align: center;
+}
+
+.favorite {
+  margin-top: 5em;
+  color: white;
 }

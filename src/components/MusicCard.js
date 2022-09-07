@@ -47,28 +47,30 @@ export default class MusicCard extends Component {
     const { trackName, previewUrl, elemento: { trackId } } = this.props;
     const { loading, check } = this.state;
     return (
-      <div>
-        <h4>{trackName}</h4>
-        {
-          loading && <Loading />
-        }
-        <audio
-          data-testid="audio-component"
-          src={ previewUrl }
-          controls
-        >
-          <track
-            kind="captions"
-          />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
+      <div className="insideMusic">
+        <div>
+          <h4>{trackName}</h4>
+          {
+            loading && <Loading />
+          }
+          <audio
+            data-testid="audio-component"
+            src={ previewUrl }
+            controls
+          >
+            <track
+              kind="captions"
+            />
+            O seu navegador não suporta o elemento
+            {' '}
+            <code>audio</code>
+            .
+          </audio>
+        </div>
         <label htmlFor="addFav">
           <input
             data-testid={ `checkbox-music-${trackId}` }
-            id="addFav"
+            className="addFav"
             type="checkbox"
             onChange={ this.onChange }
             checked={ check }

@@ -36,19 +36,21 @@ export default class Favorites extends Component {
     return (
       <div data-testid="page-favorites">
         <Header />
-        {
-          loading ? <Loading /> : (
-            favorites.map((musica) => (
-              <MusicCard
-                key={ uuid() }
-                previewUrl={ musica.previewUrl }
-                trackName={ musica.trackName }
-                elemento={ musica }
-                attFavorites={ this.attFavorites }
-              />
-            ))
-          )
-        }
+        <div className="favorite">
+          {
+            loading ? <Loading /> : (
+              favorites.map((musica) => (
+                <MusicCard
+                  key={ uuid() }
+                  previewUrl={ musica.previewUrl }
+                  trackName={ musica.trackName }
+                  elemento={ musica }
+                  attFavorites={ this.attFavorites }
+                />
+              ))
+            )
+          }
+        </div>
       </div>
     );
   }
