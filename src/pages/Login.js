@@ -34,6 +34,7 @@ export default class Login extends Component {
     const { user, buttonDisabled, loading, redirect } = this.state;
     return (
       <div className="login" data-testid="page-login">
+        <h1 className="text-login">Login</h1>
 
         {
           loading ? <Loading /> : (
