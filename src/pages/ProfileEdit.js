@@ -53,7 +53,7 @@ export default class ProfileEdit extends Component {
         <Header />
         {
           loading ? <Loading /> : (
-            <section>
+            <section className='formsProfile'>
               <label htmlFor="img">
                 Foto de Perfil
                 <input

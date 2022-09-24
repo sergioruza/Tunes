@@ -28,18 +28,19 @@ export default class Profile extends Component {
     const { image, email, name, description } = getInfo;
     return (
       <div data-testid="page-profile">
-        Profile
         <Header />
 
         {
           loading ? <Loading /> : (
-            <section>
-              <Link to="/profile/edit">Editar perfil</Link>
-              <img data-testid="profile-image" src={ image } alt={ name } />
-              <h3>{ name }</h3>
-              <p>{ email }</p>
-              <p>{ description }</p>
-            </section>
+              <>
+              <Link className='linkProfile' to="/profile/edit">Editar perfil</Link>
+                <section className='profile'>
+                  <img data-testid="profile-image" src={image} alt={name} />
+                  <h3>{name}</h3>
+                  <p>{email}</p>
+                  <p>{description}</p>
+                </section>
+            </>
           )
         }
 

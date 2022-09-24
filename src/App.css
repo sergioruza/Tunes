@@ -226,3 +226,86 @@ header {
     transform: rotate(1turn);
   }
 }
+
+.formsProfile {
+  border-radius: 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.formsProfile label input {
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 1em;
+  width: 25em;
+}
+
+.formsProfile label {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.formsProfile button {
+  margin-top: 2em;
+  width: 10em;
+  padding: 0.5em;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+  background-color: rgb(28, 202, 89);
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.formsProfile button:hover {
+  cursor: pointer;
+  transition: 1000ms;
+  zoom: 110%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10em;
+  color: white;
+  background-image: url('./image/imgBackground.jpg');
+}
+
+.profile img {
+  width: 15%;
+  border-radius: 50%;
+
+}
+
+.profile h3 {
+  margin: 1em;
+  font-size: xx-large;
+  background-color: transparent;
+}
+
+.profile p {
+  margin: 1em;
+  font-size: x-large;
+  background-color: transparent;
+}
+
+.linkProfile {
+  font-style: none;
+  font-size: x-large;
+  color: white;
+  font-weight: bolder;
+  margin-left: 1em;
+}
+
+.linkProfile:hover {
+  color: rgb(28, 202, 89);
+  transition: 500ms;
+  cursor: pointer;
+}
