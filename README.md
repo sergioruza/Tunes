@@ -1,6 +1,5 @@
 <h1 align="center">🎶 Tunes 🎶</h1>
 
-<br>
 
 ## :dart: About ##
 
