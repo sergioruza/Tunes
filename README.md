@@ -1,4 +1,4 @@
-# 🎶 Tunes 🎶
+# <h1 align="center">🎶 Tunes 🎶</h1>
 <fig>
 <img src="https://images.pexels.com/photos/145707/pexels-photo-145707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Uma imagem relacionada ao projeto">
 </fig>
