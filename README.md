@@ -39,7 +39,7 @@ com os objetivos gerais de firmar conhecimentos em ReactJS e o consumo de APIs.
 
 ### Descrição do ambiente técnico
 
-O sistema é composto de uma interface web. linguagem, frameworks e bibliotecas principais:
+O sistema é composto de uma interface web. Linguagem, frameworks e bibliotecas principais:
 > Front-End
 * **F1** - JavaScript.
 * **F2** - ReactJs.
